@@ -1,36 +1,44 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fafafa;
-    color: #222;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 25px;
-    border-bottom: 1px solid #e5e5e5;
-    background: white;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-}
-
-nav a:hover {
-    color: #2563eb;
-}
-
-main {
-    max-width: 1000px;
-    margin: 80px auto;
-    text-align: center;
-}
-
-h1 {
-    font-size: 3rem;
-    font-weight: 500;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Source+Serif+4:wght@500;600&display=swap');
+:root{--bg:#F6F8FA;--ink:#18222E;--muted:#5A6675;--line:#DDE3EA;--card:#fff;--accent:#0F6B62;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;font-weight:600;line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,6vw,4rem);letter-spacing:-.02em}
+h2{font-size:1.7rem;margin-top:2.5rem}
+h3{font-size:1.2rem;margin-bottom:.2em}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.top{position:sticky;top:0;background:rgba(246,248,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+.top nav{max-width:1000px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.brand{font-family:'Source Serif 4',serif;font-weight:600;font-size:1.15rem;color:var(--ink);text-decoration:none}
+.top nav div a{color:var(--muted);text-decoration:none;margin-left:20px;font-weight:500;font-size:.95rem;padding-bottom:4px}
+.top nav div a:hover,.top nav div a[aria-current]{color:var(--ink);border-bottom:2px solid var(--accent)}
+main{max-width:1000px;margin:auto;padding:56px 24px 80px}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:center;min-height:60vh}
+.lead{font-size:1.25rem;color:var(--muted);max-width:34em}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:11px 22px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:500;border:1px solid var(--accent)}
+.btn:hover{background:#0b544d}
+.btn.alt{background:transparent;color:var(--accent)}
+.btn.alt:hover{background:#e6f1ef}
+img,.ph{display:block;width:100%;border-radius:10px;object-fit:cover}
+.ph{background:#E9EEF3;border:2px dashed #B5C0CC;color:var(--muted);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font-size:.9rem;aspect-ratio:4/5}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.card .body{padding:18px 20px 22px}
+.card .ph,.card img{border-radius:0;aspect-ratio:3/4}
+.card.wide .ph,.card.wide img{aspect-ratio:16/10}
+.meta{color:var(--muted);font-size:.92rem;margin:0 0 .6em}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.tags span{background:#E3EFED;color:#0b544d;border-radius:99px;padding:2px 12px;font-size:.85rem}
+.two{display:grid;grid-template-columns:1fr 2fr;gap:48px}
+.entry{padding:0 0 24px 20px;border-left:2px solid var(--line);margin-bottom:0;position:relative}
+.entry::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.entry ul{margin:.4em 0 0;padding-left:1.1em}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.skills .card{padding:22px}
+footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.9rem;padding:28px}
+@media(max-width:760px){.hero,.two{grid-template-columns:1fr;gap:28px}.hero .ph,.hero img{max-width:320px}.top nav div a{margin:0 14px 0 0}}
+.skl{margin:16px 0 0;font-size:.85rem;font-weight:700;color:var(--muted)}
+.skl+.tags{margin-top:6px}
